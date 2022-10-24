@@ -15,8 +15,12 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
-        public void AddStep(Step step)
+        // Aplicando Creator, el método AddStep es responsable de crear el objeto para que al llamarlo sólo se le tengan que enviar
+        // los parámetros necesarios.
+
+        public void AddStep(Product input, double quantity, Equipment equipment, int time)
         {
+            Step step = new Step(input, quantity, equipment, time);
             this.steps.Add(step);
         }
 
